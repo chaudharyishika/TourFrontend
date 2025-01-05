@@ -74,8 +74,8 @@ function Home() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen lg:pt-[300px] mt-[130rem] sm:pt-[2px] ">
-      <div className="py-8 sm:py-12 bg-white">
+    <div className="bg-gray-100 min-h-screen lg:pt-[300px] mt-[130rem] sm:mt-0 ">
+      <div className="py-8 sm:py-0 bg-white">
         <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">
           Welcome to Our Tour Packages
         </h1>
