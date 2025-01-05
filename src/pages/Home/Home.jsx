@@ -1,4 +1,4 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import manali from "../../assets/manali.png";
 import goa from "../../assets/goa.png";
@@ -75,7 +75,7 @@ function Home() {
 
   return (
     <div className="bg-gray-100 min-h-screen lg:pt-[700px] mt-[90rem]">
-      <div className=" py-8  sm:py-12 bg-white">
+      <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">
           Welcome to Our Tour Packages
         </h1>
