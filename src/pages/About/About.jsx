@@ -11,7 +11,7 @@ function About() {
       </section>
 
       {/* Content Section */}
-      <section className="container mx-auto px-4 py-1">
+      <section className="py-8  sm:py-12 bg-white">
         {/* Welcome Section */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome to Vinayak Tours</h2>
