@@ -22,7 +22,7 @@ function ExploreDestination() {
       {/* Header Section */}
 
       {/* Destination List Section */}
-      <div className="container mx-auto px-2  lg:px-2 py-12">
+      <div className="py-8  sm:py-12 bg-white">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Popular Destinations</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {destination_list.map((destination) => (
