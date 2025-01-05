@@ -53,7 +53,7 @@ function Blog() {
 
   return (
     <div className="bg-gray-100 py-12 lg:pt-[1000px] sm:pt-[50px] pb-5 ">
-      <div className="container mx-auto px-4">
+      <div className="py-8  sm:py-12 bg-white">
         <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">
           Travel Blog
         </h1>
