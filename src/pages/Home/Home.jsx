@@ -136,12 +136,12 @@ function Home() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={manali} alt="Mountain Packages" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-indigo-600 mb-4">Mountain Adventures</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4">Mountain Adventures</h2>
               <div className="space-y-4">
                 {packageData.mountain.map((pkg) => (
                   <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
-                    <h3 className="text-lg font-semibold">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm">{pkg.details}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold">{pkg.name}</h3>
+                    <p className="text-gray-600 sm:text-lg text-sm">{pkg.details}</p>
                   </Link>
                 ))}
               </div>
@@ -152,12 +152,12 @@ function Home() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={goa} alt="Beach Packages" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-indigo-600 mb-4">Beach Escapes</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4">Beach Escapes</h2>
               <div className="space-y-4">
                 {packageData.beach.map((pkg) => (
                   <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
-                    <h3 className="text-lg font-semibold">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm">{pkg.details}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold">{pkg.name}</h3>
+                    <p className="text-gray-600 sm:text-lg text-sm">{pkg.details}</p>
                   </Link>
                 ))}
               </div>
@@ -169,12 +169,12 @@ function Home() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={chardham} alt="Heritage Packages" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-indigo-600 mb-4">Heritage Tours</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4">Heritage Tours</h2>
               <div className="space-y-4">
                 {packageData.heritage.map((pkg) => (
                   <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
-                    <h3 className="text-lg font-semibold">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm">{pkg.details}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold">{pkg.name}</h3>
+                    <p className="text-gray-600 sm:text-lg text-sm">{pkg.details}</p>
                   </Link>
                 ))}
               </div>
@@ -185,12 +185,12 @@ function Home() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={honeymoon} alt="Honeymoon Packages" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-indigo-600 mb-4">Honeymoon Getaways</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4">Honeymoon Getaways</h2>
               <div className="space-y-4">
                 {packageData.honeymoon.map((pkg) => (
                   <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
-                    <h3 className="text-lg font-semibold">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm">{pkg.details}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold">{pkg.name}</h3>
+                    <p className="text-gray-600 sm:text-lg text-sm">{pkg.details}</p>
                   </Link>
                 ))}
               </div>
@@ -201,12 +201,12 @@ function Home() {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={adventure} alt="Adventure Packages" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-xl font-bold text-indigo-600 mb-4">Adventure Activities</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-indigo-600 mb-4">Adventure Activities</h2>
               <div className="space-y-4">
                 {packageData.adventure.map((pkg) => (
                   <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
-                    <h3 className="text-lg font-semibold">{pkg.name}</h3>
-                    <p className="text-gray-600 text-sm">{pkg.details}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold">{pkg.name}</h3>
+                    <p className="text-gray-600 sm:text-lg text-sm">{pkg.details}</p>
                   </Link>
                 ))}
               </div>
