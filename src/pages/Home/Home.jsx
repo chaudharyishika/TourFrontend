@@ -139,7 +139,7 @@ function Home() {
               <h2 className="text-xl font-bold text-indigo-600 mb-4">Mountain Adventures</h2>
               <div className="space-y-4">
                 {packageData.mountain.map((pkg) => (
-                  <Link  key={pkg.id} className="block hover:underline">
+                  <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
                     <h3 className="text-lg font-semibold">{pkg.name}</h3>
                     <p className="text-gray-600 text-sm">{pkg.details}</p>
                   </Link>
@@ -155,7 +155,7 @@ function Home() {
               <h2 className="text-xl font-bold text-indigo-600 mb-4">Beach Escapes</h2>
               <div className="space-y-4">
                 {packageData.beach.map((pkg) => (
-                  <Link to={/package/${pkg.id}} key={pkg.id} className="block hover:underline">
+                  <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
                     <h3 className="text-lg font-semibold">{pkg.name}</h3>
                     <p className="text-gray-600 text-sm">{pkg.details}</p>
                   </Link>
@@ -172,7 +172,7 @@ function Home() {
               <h2 className="text-xl font-bold text-indigo-600 mb-4">Heritage Tours</h2>
               <div className="space-y-4">
                 {packageData.heritage.map((pkg) => (
-                  <Link to={/package/${pkg.id}} key={pkg.id} className="block hover:underline">
+                  <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
                     <h3 className="text-lg font-semibold">{pkg.name}</h3>
                     <p className="text-gray-600 text-sm">{pkg.details}</p>
                   </Link>
@@ -188,7 +188,7 @@ function Home() {
               <h2 className="text-xl font-bold text-indigo-600 mb-4">Honeymoon Getaways</h2>
               <div className="space-y-4">
                 {packageData.honeymoon.map((pkg) => (
-                  <Link to={/package/${pkg.id}} key={pkg.id} className="block hover:underline">
+                  <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
                     <h3 className="text-lg font-semibold">{pkg.name}</h3>
                     <p className="text-gray-600 text-sm">{pkg.details}</p>
                   </Link>
@@ -204,7 +204,7 @@ function Home() {
               <h2 className="text-xl font-bold text-indigo-600 mb-4">Adventure Activities</h2>
               <div className="space-y-4">
                 {packageData.adventure.map((pkg) => (
-                  <Link to={/package/${pkg.id}} key={pkg.id} className="block hover:underline">
+                  <Link to={`/package/${pkg.id}`} key={pkg.id} className="block hover:underline">
                     <h3 className="text-lg font-semibold">{pkg.name}</h3>
                     <p className="text-gray-600 text-sm">{pkg.details}</p>
                   </Link>
