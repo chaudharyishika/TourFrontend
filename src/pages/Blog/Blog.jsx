@@ -4,6 +4,8 @@ import blogcard2 from "../../assets/blogcard2.png";
 import blogcard3 from "../../assets/blogcard3.png";
 import blogcard4 from "../../assets/blogcard4.png";
 import Footer from "../../components/Footer/Footer";
+import whatsapp from "../../assets/whatsapp.png";
+import call from "../../assets/call.png";
 
 function Blog() {
   const [expandedPost, setExpandedPost] = useState(null);
@@ -90,7 +92,17 @@ function Blog() {
           ))}
         </div>
       </div>
-     
+     <div className="fixed bottom-4 right-4">
+      <a href="https://wa.me/917048992287?text=Hello How can I help you?" target="_blank">
+      <img src={whatsapp} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+      </div>
+      <div className="fixed bottom-4 left-4 ">
+      <a href="tel:+91-7048992287" target="_blank">
+      <img src={call} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+
+      </div>
     </div>
   );
 }
