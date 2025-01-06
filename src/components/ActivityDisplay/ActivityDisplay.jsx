@@ -7,7 +7,8 @@ import scubadiving from "../../assets/scubadiving.png";
 import wildlifeSafari from "../../assets/wildlifeSafari.png";
 import Footer from "../../components/Footer/Footer";
 import Form from "../../pages/Dashbaord/Form"; // Import the Form component
-
+import whatsapp from "../../assets/whatsapp.png";
+import call from "../../assets/call.png";
 function ActivityDisplay() {
   const activities = [
     { img: trekking, title: "Trekking", description: "Discover scenic trails and breathtaking landscapes on guided treks." },
@@ -152,7 +153,17 @@ function ActivityDisplay() {
           </div>
         </div>
       </section>
-     
+     <div className="fixed bottom-4 right-4">
+      <a href="https://wa.me/917048992287?text=Hello How can I help you?" target="_blank">
+      <img src={whatsapp} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+      </div>
+      <div className="fixed bottom-4 left-4 ">
+      <a href="tel:+91-7048992287" target="_blank">
+      <img src={call} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+
+      </div>
     </div>
   );
 }
