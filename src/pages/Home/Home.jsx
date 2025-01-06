@@ -8,7 +8,8 @@ import honeymoon from "../../assets/honeymoon.png";
 import axios from "axios";
 import ReviewSection from "../../components/Review/Review";
 import Footer from "../../components/Footer/Footer";
-
+import whatsapp from "../../assets/whatsapp.png";
+import call from "../../assets/call.png";
 function Home() {
   const [formData, setFormData] = useState({
     name: "",
@@ -214,6 +215,17 @@ function Home() {
           </div>
         </div>
         <ReviewSection />
+      </div>
+       <div className="fixed bottom-4 right-4">
+      <a href="https://wa.me/917895830315?text=Hello,I have an Inquiry?" target="_blank">
+      <img src={whatsapp} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+      </div>
+      <div className="fixed bottom-4 left-4 ">
+      <a href="tel:+91-7895830315" target="_blank">
+      <img src={call} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
+      </a>
+
       </div>
     </div>
   );
