@@ -10,7 +10,7 @@ function ReviewSection() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get("https://backsampl-3.onrender.com/api/review/reviews");
+        const response = await axios.get("https://backsampl.onrender.com/api/review/reviews");
         
         setReviews(response.data.data);
       } catch (error) {
