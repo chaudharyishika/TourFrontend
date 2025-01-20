@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Form = ({ destination }) => {
+const Form = ({ destination, closeForm }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phoneNumber: "",
     enquiryText: "",
-    selectedPackage: destination ? destination.name || "Default Packages", // Default to the selected destination's name
+    selectedPackage: destination?.title || "Default Package", // Safely access title or use a default
   });
 
   const handleSubmit = async (e) => {
@@ -16,19 +16,27 @@ const Form = ({ destination }) => {
     // Client-side validation to ensure all fields are filled
     if (!formData.name || !formData.email || !formData.phoneNumber || !formData.enquiryText || !formData.selectedPackage) {
       alert("Please fill in all fields.");
-
-
       return;
     }
-    
-    console.log("Submitting form data:", formData); 
 
+    console.log("Submitting form data:", formData);
 
     try {
       const response = await axios.post("https://backsampl.onrender.com/api/form", formData);
       console.log("Form submitted successfully:", response.data);
       alert("Form submitted successfully!");
-      setFormData({ name: "", email: "", phoneNumber: "", enquiryText: "", selectedPackage: destination.name });
+
+      // Reset form fields
+      setFormData({
+        name: "",
+        email: "",
+        phoneNumber: "",
+        enquiryText: "",
+        selectedPackage: destination?.title || "Default Package",
+      });
+
+      // Close the form popup after submission
+      if (closeForm) closeForm();
     } catch (error) {
       console.error("Error submitting form:", error.response?.data?.message || error.message);
       alert("Error submitting form. Please try again.");
@@ -37,7 +45,6 @@ const Form = ({ destination }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // Ensuring the phone number is handled as a string
     setFormData({ ...formData, [name]: value });
   };
 
@@ -62,7 +69,7 @@ const Form = ({ destination }) => {
           onChange={handleInputChange}
         />
         <input
-          type="text" // Change to text instead of number to handle phone numbers as strings
+          type="text"
           name="phoneNumber"
           placeholder="Phone Number"
           className="border p-2 w-full mb-4"
@@ -76,7 +83,6 @@ const Form = ({ destination }) => {
           value={formData.enquiryText}
           onChange={handleInputChange}
         />
-
         <button type="submit" className="bg-indigo-600 text-white px-4 py-2">
           Submit
         </button>
