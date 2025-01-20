@@ -6,9 +6,10 @@ import paragliding from "../../assets/paragliding.png";
 import scubadiving from "../../assets/scubadiving.png";
 import wildlifeSafari from "../../assets/wildlifeSafari.png";
 import Footer from "../../components/Footer/Footer";
-import Form from "../../pages/Dashbaord/Form"; // Import the Form component
+import Form from "../../pages/Dashbaord/Form";
 import whatsapp from "../../assets/whatsapp.png";
 import call from "../../assets/call.png";
+
 function ActivityDisplay() {
   const activities = [
     { img: trekking, title: "Trekking", description: "Discover scenic trails and breathtaking landscapes on guided treks." },
@@ -21,6 +22,7 @@ function ActivityDisplay() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showForm, setShowForm] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState(null);
 
   const nextActivity = () => {
     if (currentIndex < activities.length - 1) {
@@ -34,7 +36,8 @@ function ActivityDisplay() {
     }
   };
 
-  const handleEnquiryClick = () => {
+  const handleEnquiryClick = (activity) => {
+    setSelectedActivity(activity);
     setShowForm(true);
   };
 
@@ -43,10 +46,8 @@ function ActivityDisplay() {
   };
 
   return (
-    <div className="bg-gray-100 lg:pt-[1000px] sm:pt-0  ">
-      {/* Hero Section */}
-      {/* Activities Slider Section */}
-      <section className="py-8  sm:py-12 bg-white">
+    <div className="bg-gray-100 lg:pt-[1000px] sm:pt-0">
+      <section className="py-8 sm:py-12 bg-white">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6 sm:mb-8">
           Our Activities
         </h2>
@@ -76,7 +77,7 @@ function ActivityDisplay() {
                         {activity.description}
                       </p>
                       <button
-                        onClick={handleEnquiryClick}
+                        onClick={() => handleEnquiryClick(activity)}
                         className="px-4 sm:px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700"
                       >
                         Enquiry Now
@@ -88,7 +89,6 @@ function ActivityDisplay() {
             </div>
           </div>
 
-          {/* Slider Controls */}
           <button
             onClick={prevActivity}
             className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-gray-100 text-gray-800 p-2 sm:p-3 rounded-full shadow-md hover:bg-gray-200"
@@ -106,7 +106,6 @@ function ActivityDisplay() {
         </div>
       </section>
 
-      {/* Form Modal */}
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-[90%] sm:w-[500px] relative">
@@ -116,56 +115,13 @@ function ActivityDisplay() {
             >
               ✖
             </button>
-            <Form />
+            <Form destination={selectedActivity} />
           </div>
         </div>
       )}
-
-      {/* Why Choose Us Section */}
-      <section className="py-8 sm:py-12 bg-gray-100">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6 sm:mb-8">
-          Why Choose Our Activities?
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-full md:max-w-6xl mx-auto px-4">
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-lg sm:text-xl font-semibold text-indigo-600 mb-2 sm:mb-4">
-              Expert Guides
-            </h3>
-            <p className="text-sm md:text-base text-gray-700">
-              Our activities are led by experienced guides ensuring your safety and enjoyment.
-            </p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-lg sm:text-xl font-semibold text-indigo-600 mb-2 sm:mb-4">
-              Top-Notch Equipment
-            </h3>
-            <p className="text-sm md:text-base text-gray-700">
-              We provide high-quality equipment for all activities to ensure the best experience.
-            </p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-lg sm:text-xl font-semibold text-indigo-600 mb-2 sm:mb-4">
-              Unforgettable Experiences
-            </h3>
-            <p className="text-sm md:text-base text-gray-700">
-              Create memories that will last a lifetime with our well-curated activities.
-            </p>
-          </div>
-        </div>
-      </section>
-     <div className="fixed bottom-4 right-4">
-      <a href="https://wa.me/917048992287?text=Hello How can I help you?" target="_blank">
-      <img src={whatsapp} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
-      </a>
-      </div>
-      <div className="fixed bottom-4 left-4 ">
-      <a href="tel:+91-7048992287" target="_blank">
-      <img src={call} className="w-24 h-24 rounded-full shadow-lg hover:scale-110 transition-transform duration-200 "/>
-      </a>
-
-      </div>
     </div>
   );
 }
 
 export default ActivityDisplay;
+
