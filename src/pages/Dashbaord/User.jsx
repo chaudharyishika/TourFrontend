@@ -8,7 +8,7 @@ const TotalUsers = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:4000/api/auth/users", {
+        const response = await axios.get("https://backsampl.onrender.com/api/auth/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(response.data.users);
