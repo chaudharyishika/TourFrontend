@@ -25,7 +25,7 @@ const Form = ({ destination }) => {
 
 
     try {
-      const response = await axios.post("https://backsampl-3.onrender.com/api/form", formData);
+      const response = await axios.post("https://backsampl.onrender.com/api/form", formData);
       console.log("Form submitted successfully:", response.data);
       alert("Form submitted successfully!");
       setFormData({ name: "", email: "", phoneNumber: "", enquiryText: "", selectedPackage: destination.name });
