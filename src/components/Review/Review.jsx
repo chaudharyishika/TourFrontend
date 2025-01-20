@@ -16,7 +16,7 @@ function ReviewSection() {
           return;
         }
 
-        const response = await axios.get("https://backsampl.onrender.com/api/review/", {
+        const response = await axios.post("https://backsampl.onrender.com/api/review/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
