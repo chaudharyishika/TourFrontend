@@ -115,7 +115,7 @@ function ActivityDisplay() {
             >
               ✖
             </button>
-            <Form destination={selectedActivity} />
+            <Form destination={selectedActivity}  closeForm={closeForm} />
           </div>
         </div>
       )}
