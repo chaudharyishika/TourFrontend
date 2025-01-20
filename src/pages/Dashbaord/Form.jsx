@@ -10,6 +10,8 @@ const Form = ({ destination, closeForm }) => {
     selectedPackage: destination?.title || "Default Package", // Safely access title or use a default
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false); // Track form submission status
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,6 +22,8 @@ const Form = ({ destination, closeForm }) => {
     }
 
     console.log("Submitting form data:", formData);
+
+    setIsSubmitting(true); // Set submitting state to true
 
     try {
       const response = await axios.post("https://backsampl.onrender.com/api/form", formData);
@@ -40,6 +44,8 @@ const Form = ({ destination, closeForm }) => {
     } catch (error) {
       console.error("Error submitting form:", error.response?.data?.message || error.message);
       alert("Error submitting form. Please try again.");
+    } finally {
+      setIsSubmitting(false); // Reset submitting state
     }
   };
 
@@ -83,8 +89,12 @@ const Form = ({ destination, closeForm }) => {
           value={formData.enquiryText}
           onChange={handleInputChange}
         />
-        <button type="submit" className="bg-indigo-600 text-white px-4 py-2">
-          Submit
+        <button
+          type="submit"
+          className="bg-indigo-600 text-white px-4 py-2"
+          disabled={isSubmitting} // Disable button while submitting
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>
