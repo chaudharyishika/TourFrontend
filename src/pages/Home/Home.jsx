@@ -34,7 +34,7 @@ function Home() {
     }
 
     try {
-      const API_URL = "https://backsampl.onrender.com/api/form";
+      const API_URL = "https://backsampl.onrender.com/api/form/";
 
       const response = await axios.post(API_URL, formData);
       console.log("Form submitted successfully:", response.data);
