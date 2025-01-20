@@ -10,17 +10,9 @@ function ReviewSection() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          setErrorMessage("Please log in to view reviews.");
-          return;
-        }
+      
 
-        const response = await axios.get("https://backsampl.onrender.com/api/review/reviews", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get("https://backsampl.onrender.com/api/review/reviews";
         setReviews(response.data.data);
       } catch (error) {
         setErrorMessage(
