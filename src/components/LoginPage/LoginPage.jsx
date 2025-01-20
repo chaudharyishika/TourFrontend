@@ -25,8 +25,8 @@ function LoginPage() {
     try {
       const endpoint =
         currState === "Sign Up"
-          ? "https://backsampl-3.onrender.com/api/auth/signup"
-          : "https://backsampl-3.onrender.com/api/auth/login";
+          ? "https://backsampl.onrender.com/api/auth/signup"
+          : "https://backsampl.onrender.com/api/auth/login";
   
       const response = await axios.post(endpoint, formData);
   
