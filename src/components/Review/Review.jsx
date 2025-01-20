@@ -34,7 +34,7 @@ function ReviewSection() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://backsampl-3.onrender.com/api/review",
+        "https://backsampl.onrender.com/api/review",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
