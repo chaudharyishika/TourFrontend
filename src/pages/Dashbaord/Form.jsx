@@ -7,7 +7,7 @@ const Form = ({ destination }) => {
     email: "",
     phoneNumber: "",
     enquiryText: "",
-    selectedPackage: destination ? destination.name : "", // Default to the selected destination's name
+    selectedPackage: destination ? destination.name : "Default Packages", // Default to the selected destination's name
   });
 
   const handleSubmit = async (e) => {
