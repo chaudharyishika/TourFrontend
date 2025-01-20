@@ -44,12 +44,13 @@ function ReviewSection() {
 
     try {
       const token = localStorage.getItem("token");
+      console.log("Token:", token);
       if (!token) {
         setErrorMessage("Please log in to submit a review.");
         return;
       }
 
-      const response = await axios.get(
+      const response = await axios.post(
         "https://backsampl.onrender.com/api/review/",
         formData,
         {
